@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Getclip - YouTube and Instagram Video Downloader</title>
+  <meta name="description" content="Download YouTube videos, Shorts, Instagram Reels and posts in their original quality. Save video as MP4 up to 4K, or extract audio as MP3 or M4A.">
+  <link rel="canonical" href="https://example.com/">
+  <meta name="theme-color" content="#1a56db">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Getclip">
+  <meta property="og:title" content="Getclip - YouTube and Instagram Video Downloader">
+  <meta property="og:description" content="Download YouTube videos, Shorts, Instagram Reels and posts in their original quality. Save video as MP4 up to 4K, or extract audio as MP3 or M4A.">
+  <meta property="og:url" content="https://example.com/">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/menu.js" defer></script>
+  <script src="/js/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/" aria-label="Getclip home">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#1a56db"/><path d="M16 7v12m0 0l-5-5m5 5l5-5M9 24h14" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Getclip</span>
+      </a>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <svg class="icon-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <nav class="nav" id="site-nav" aria-label="Main">
+        <a href="/" aria-current="page">Downloader</a>
+        <a href="/#how">How it works</a>
+        <a href="/#formats">Formats</a>
+        <a href="/#faq">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container">
+        <h1>YouTube and Instagram video downloader</h1>
+        <p class="lead">Paste a link, choose a format, and save the file. Video is saved as published, without re-encoding.</p>
+
+        <form id="dl-form" class="dl-form" novalidate>
+          <label class="sr-only" for="url">YouTube or Instagram link</label>
+          <div class="field">
+            <input id="url" name="url" type="url" inputmode="url" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="Paste a YouTube or Instagram link">
+            <button class="btn btn-secondary" id="paste-btn" type="button">Paste</button>
+            <button class="btn btn-primary" id="submit-btn" type="submit"><span class="btn-label">Download</span></button>
+          </div>
+          <p class="hint" id="hint" aria-live="polite">Works with YouTube videos and Shorts, Instagram Reels, posts and stories.</p>
+          <p class="rights">Only download content you own or have permission to save. See the <a href="/terms">Terms</a>.</p>
+        </form>
+
+        <div class="notice" id="status" role="status" aria-live="polite" hidden></div>
+        <noscript><div class="notice notice-error">JavaScript is required to use the downloader.</div></noscript>
+      </div>
+    </section>
+
+    <section class="result" id="result" aria-live="polite" hidden>
+      <div class="container" id="result-body"></div>
+    </section>
+
+    <section class="section" id="how">
+      <div class="container">
+        <h2>How it works</h2>
+        <p class="section-intro">Three steps, no account and nothing to install.</p>
+        <ol class="steps">
+          <li>
+            <h3>Copy the link</h3>
+            <p>Use the share button in the YouTube or Instagram app, or copy the address from your browser.</p>
+          </li>
+          <li>
+            <h3>Paste it and press Download</h3>
+            <p>The site recognizes the platform and loads the title, thumbnail, duration and every format available.</p>
+          </li>
+          <li>
+            <h3>Pick a format</h3>
+            <p>Choose a video quality or audio-only file. The download starts as soon as the file is ready.</p>
+          </li>
+        </ol>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th scope="col">Platform</th><th scope="col">Supported links</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>YouTube</td><td>Videos (youtube.com/watch), short links (youtu.be), Shorts and finished live streams</td></tr>
+              <tr><td>Instagram</td><td>Reels, posts with video, IGTV and public stories</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="formats">
+      <div class="container">
+        <h2>Formats and quality</h2>
+        <p class="section-intro">The list you see is built from what the source actually publishes, so you never get an option that does not exist.</p>
+        <div class="two-col">
+          <div class="panel">
+            <h3>YouTube</h3>
+            <ul>
+              <li><strong>Video:</strong> 144p up to 2160p (4K), when the video is available in that resolution</li>
+              <li><strong>MP3:</strong> 64, 128 or 320 kbps</li>
+              <li><strong>M4A:</strong> AAC audio</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>Instagram</h3>
+            <ul>
+              <li><strong>Video:</strong> HD and SD, when both are offered</li>
+              <li><strong>Audio:</strong> M4A or MP3, extracted from the video</li>
+            </ul>
+          </div>
+        </div>
+        <p class="note">Video streams are downloaded as published and are not compressed again. YouTube serves 1080p and above as separate video and audio streams, which are joined into one file without re-encoding, so those downloads take a little longer. MP3 files are encoded from the source audio, so they can match the original but never exceed it.</p>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <h2>Frequently asked questions</h2>
+        <div class="faq">
+          <details>
+            <summary>Why is a resolution missing for my video?</summary>
+            <p>Only resolutions that the uploader and the platform publish are listed. Many videos are not available in 1440p or 4K.</p>
+          </details>
+          <details>
+            <summary>Is the quality reduced?</summary>
+            <p>Video is not compressed again. For audio, M4A keeps the original AAC stream when the source provides one. MP3 is created by encoding the source audio, so a 320 kbps MP3 is not better than the original track.</p>
+          </details>
+          <details>
+            <summary>Can I download private videos or stories?</summary>
+            <p>No. Private and members-only videos cannot be downloaded. Instagram stories work only when they are public and reachable, and some will fail.</p>
+          </details>
+          <details>
+            <summary>Why did my download fail?</summary>
+            <p>The video may be private, removed, age restricted or still live. A busy server can also refuse a request for a moment. Check the message shown under the link field, then try again.</p>
+          </details>
+          <details>
+            <summary>Do you keep my files?</summary>
+            <p>No. A file is prepared when you ask for it, stays available for a few minutes, and is then deleted. See the <a href="/privacy">Privacy Policy</a> for details.</p>
+          </details>
+          <details>
+            <summary>Is it legal to download videos?</summary>
+            <p>That depends on the content and where you live. Downloading material you do not own or have permission to use can break copyright law and the platform's terms. Use this tool for your own videos, public domain or Creative Commons content, or with the owner's permission.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a class="logo" href="/" aria-label="Getclip home">
+            <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#1a56db"/><path d="M16 7v12m0 0l-5-5m5 5l5-5M9 24h14" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Getclip</span>
+          </a>
+          <p>Download YouTube and Instagram videos and audio in their original quality.</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="/">Downloader</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms and Conditions</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Getclip. Not affiliated with or endorsed by YouTube, Google or Instagram. All trademarks belong to their owners.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
